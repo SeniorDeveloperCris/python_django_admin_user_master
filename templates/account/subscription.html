@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+  <div class="content-wrapper">
+    <div class="logo">
+      <img class="img-responsive" src="{% static 'img/logo.png' %}">
+    </div>
+
+    {% if form.errors %}
+      {% for field in form %}
+        {% for error in field.errors %}
+          {% include 'alerts/danger.html' with alert_title='' alert_body=error %}
+        {% endfor %}
+      {% endfor %}
+      {% for error in form.non_field_errors %}
+        {% include 'alerts/danger.html' with alert_title='' alert_body=error %}
+      {% endfor %}
+    {% endif %}
+    <form id="subscribeForm" method="post" novalidate>{% csrf_token %}
+      <div class="form-group">
+        {{ form.email }}
+      </div> <br>
+      <div class="form-group">
+        {{ form.firstname }}
+      </div> <br>
+      <div class="form-group">
+        {{ form.lastname }}
+      </div><br>
+      <button type="submit" class="btn btn-primary btn-block">Keep Me Informed</button>
+
+    </form>
+
+  </div>
+
+{% endblock %}

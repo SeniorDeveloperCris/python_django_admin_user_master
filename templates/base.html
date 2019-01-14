@@ -1,0 +1,41 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Witley</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- jQuery -->
+  <script type="text/javascript" src="{% static 'vendor/jquery/jquery-3.3.1.min.js' %}"></script>
+  <script type="text/javascript" src="{% static 'vendor/jquery/jquery.validate.min.js' %}"></script>
+
+  <!-- bootstrap -->
+  <link href="{% static 'vendor/bootstrap-3.3.7/css/bootstrap.min.css' %}" rel="stylesheet" type="text/css">
+  <script type="text/javascript" src="{% static 'vendor/bootstrap-3.3.7/js/bootstrap.min.js' %}"></script>
+
+  <!-- font awesome -->
+  <link href="{% static 'vendor/font-awesome/css/font-awesome.min.css' %}" rel="stylesheet" type="text/css" media="all">
+
+  <!-- stylesheet -->
+  <link href="{% static 'css/style.css' %}" rel="stylesheet" type="text/css" media="all">
+
+  {#  <!-- favicon -->#}
+  {#  <link rel="shortcut icon" href="{% static 'favicon.ico' %}" type="image/x-icon"/>#}
+
+  <!-- custom javascript -->
+  <script type="text/javascript" src="{% static 'js/all.js' %}"></script>
+
+  {% block extra_css %}{% endblock %}
+</head>
+
+<body>
+<div class="container-fluid">
+  {% block content %}{% endblock %}
+</div>
+
+{% block extra_script %}{% endblock %}
+
+</body>
+</html>

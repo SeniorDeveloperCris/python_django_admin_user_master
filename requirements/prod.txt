@@ -1,0 +1,7 @@
+-r base.txt
+
+psycopg2-binary
+dj-database-url
+django-compressor
+gunicorn
+whitenoise
